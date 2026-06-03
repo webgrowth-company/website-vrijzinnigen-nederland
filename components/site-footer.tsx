@@ -1,17 +1,27 @@
+import { Facebook, Linkedin } from "lucide-react";
 import { SITE } from "@/lib/site";
+
+const SOCIALS = [
+  { href: SITE.social.facebook, label: "Facebook", Icon: Facebook },
+  { href: SITE.social.linkedin, label: "LinkedIn", Icon: Linkedin },
+];
 
 export function SiteFooter() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-[var(--color-rule)] bg-[var(--color-paper)]">
+    <footer className="bg-[var(--color-paper)]">
+      <div className="rainbow-bar" aria-hidden />
       <div className="mx-auto max-w-[76rem] px-6 py-16 sm:px-10">
-        <div className="flex flex-col gap-12 md:flex-row md:items-end md:justify-between">
+        <div className="flex flex-col gap-12 md:flex-row md:items-start md:justify-between">
           <div className="max-w-md">
             <p className="font-display text-2xl font-medium leading-snug text-[var(--color-ink-strong)]">
               Vrijzinnigen Nederland
             </p>
-            <p className="mt-3 text-[0.95rem] leading-relaxed text-[var(--color-ink-muted)]">
+            <p className="mt-2 text-[0.95rem] italic text-[var(--color-clay)]">
+              {SITE.payoff}
+            </p>
+            <p className="mt-4 text-[0.95rem] leading-relaxed text-[var(--color-ink-muted)]">
               Een vereniging die mensen verbindt rond inspiratie en zingeving,
               van vrijzinnigen tot religieus humanisten.
             </p>
@@ -22,28 +32,45 @@ export function SiteFooter() {
             </address>
           </div>
 
-          <nav
-            className="flex flex-wrap gap-x-10 gap-y-3 text-[0.95rem]"
-            aria-label="Footermenu"
-          >
-            <a className="text-[var(--color-ink-muted)] transition-colors hover:text-[var(--color-ink-strong)]" href="#manifest">
-              Wie we zijn
-            </a>
-            <a className="text-[var(--color-ink-muted)] transition-colors hover:text-[var(--color-ink-strong)]" href="#praktijk">
-              Wat we doen
-            </a>
-            <a className="text-[var(--color-ink-muted)] transition-colors hover:text-[var(--color-ink-strong)]" href="#idealen">
-              Idealen
-            </a>
-            <a className="text-[var(--color-ink-muted)] transition-colors hover:text-[var(--color-ink-strong)]" href={`mailto:${SITE.email}`}>
-              {SITE.email}
-            </a>
-          </nav>
+          <div className="flex flex-col gap-8">
+            <nav
+              className="flex flex-wrap gap-x-10 gap-y-3 text-[0.95rem]"
+              aria-label="Footermenu"
+            >
+              <a className="text-[var(--color-ink-muted)] transition-colors hover:text-[var(--color-ink-strong)]" href="#manifest">
+                Wie we zijn
+              </a>
+              <a className="text-[var(--color-ink-muted)] transition-colors hover:text-[var(--color-ink-strong)]" href="#praktijk">
+                Wat we doen
+              </a>
+              <a className="text-[var(--color-ink-muted)] transition-colors hover:text-[var(--color-ink-strong)]" href="#idealen">
+                Idealen
+              </a>
+              <a className="text-[var(--color-ink-muted)] transition-colors hover:text-[var(--color-ink-strong)]" href={`mailto:${SITE.email}`}>
+                {SITE.email}
+              </a>
+            </nav>
+
+            <div className="flex items-center gap-3">
+              {SOCIALS.map(({ href, label, Icon }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${SITE.name} op ${label}`}
+                  className="press grid h-10 w-10 place-items-center rounded-full border border-[var(--color-rule)] text-[var(--color-ink-muted)] transition-colors hover:border-[var(--color-clay)] hover:text-[var(--color-clay)]"
+                >
+                  <Icon size={18} strokeWidth={1.8} aria-hidden />
+                </a>
+              ))}
+            </div>
+          </div>
         </div>
 
         <div className="mt-14 flex items-center justify-between border-t border-[var(--color-rule-soft)] pt-6 text-[0.8rem] text-[var(--color-ink-subtle)]">
           <span>© {year} Vrijzinnigen Nederland</span>
-          <span className="font-display italic">Ruimte voor vrij denken</span>
+          <span className="font-display italic">Sinds {SITE.foundingYear}</span>
         </div>
       </div>
     </footer>

@@ -1,4 +1,6 @@
 import Link from "next/link";
+import Image from "next/image";
+import logo from "@/public/brand/vznl-payoff.png";
 
 const NAV = [
   { href: "#manifest", label: "Wie we zijn" },
@@ -8,15 +10,19 @@ const NAV = [
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-50 border-b border-[var(--color-rule-soft)] bg-[var(--color-paper)]/80 backdrop-blur-md">
-      <div className="mx-auto flex h-16 max-w-[76rem] items-center justify-between gap-8 px-6 sm:px-10">
-        <Link href="/" className="group flex items-baseline gap-2.5" aria-label="Vrijzinnigen Nederland, naar home">
-          <span className="font-display text-[1.35rem] font-semibold leading-none text-[var(--color-ink-strong)]">
-            Vrijzinnigen
-          </span>
-          <span className="hidden text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-[var(--color-clay)] sm:inline">
-            Nederland
-          </span>
+    <header className="sticky top-0 z-50 bg-[var(--color-paper)]/85 backdrop-blur-md">
+      {/* Regenboog-signatuur, ontleend aan het logo */}
+      <div className="rainbow-bar" aria-hidden />
+
+      <div className="mx-auto flex h-[4.25rem] max-w-[76rem] items-center justify-between gap-8 border-b border-[var(--color-rule-soft)] px-6 sm:px-10">
+        <Link href="/" aria-label="Vrijzinnigen Nederland, naar home" className="press flex items-center">
+          <Image
+            src={logo}
+            alt="Vrijzinnigen Nederland, verbindt vrijdenkers en zinzoekers"
+            priority
+            className="h-11 w-auto"
+            sizes="64px"
+          />
         </Link>
 
         <nav className="hidden items-center gap-9 md:flex" aria-label="Hoofdmenu">
@@ -33,7 +39,7 @@ export function SiteHeader() {
 
         <a
           href="#meedoen"
-          className="press inline-flex items-center gap-1.5 text-[0.92rem] font-medium text-[var(--color-ink-strong)] underline decoration-[var(--color-clay)] decoration-2 underline-offset-[6px] transition-colors hover:text-[var(--color-clay)]"
+          className="press inline-flex items-center text-[0.92rem] font-medium text-[var(--color-ink-strong)] underline decoration-[var(--color-clay)] decoration-2 underline-offset-[6px] transition-colors hover:text-[var(--color-clay)]"
         >
           Sluit je aan
         </a>

@@ -14,7 +14,7 @@
  */
 
 const KEY = "3fd1f0243a58e0932199a460657aac97";
-const HOST = "www.vrijzinnigen.nl";
+const HOST = "www.vrijzinnigennederland.nl";
 const KEY_LOCATION = `https://${HOST}/${KEY}.txt`;
 const ENDPOINT = "https://api.indexnow.org/IndexNow";
 

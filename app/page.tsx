@@ -13,6 +13,7 @@ const ORG_JSONLD = {
   foundingDate: SITE.foundingYear,
   areaServed: "NL",
   knowsLanguage: "nl-NL",
+  slogan: SITE.payoff,
   address: {
     "@type": "PostalAddress",
     streetAddress: SITE.address.street,
@@ -20,6 +21,7 @@ const ORG_JSONLD = {
     addressLocality: SITE.address.city,
     addressCountry: SITE.address.country,
   },
+  sameAs: [SITE.social.facebook, SITE.social.linkedin],
 };
 
 const WEBSITE_JSONLD = {
@@ -101,7 +103,7 @@ export default function Home() {
                 className="font-display mt-6 max-w-[14ch] text-[2.75rem] font-medium leading-[1.04] text-[var(--color-ink-strong)] sm:text-[4.25rem] sm:leading-[0.98]"
               >
                 Ruimte voor zingeving, verbinding en{" "}
-                <span className="italic text-[var(--color-clay)]">vrij denken</span>
+                <span className="rainbow-underline italic">vrij denken</span>
               </Reveal>
 
               <Reveal

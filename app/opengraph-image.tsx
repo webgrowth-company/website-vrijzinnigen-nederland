@@ -79,12 +79,24 @@ export default function OgImage() {
 
         <div
           style={{
-            fontSize: 24,
-            color: "rgba(241,233,220,0.5)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
             fontFamily: "sans-serif",
           }}
         >
-          vrijzinnigen.nl
+          <div style={{ fontSize: 24, color: "rgba(241,233,220,0.5)" }}>
+            vrijzinnigennederland.nl
+          </div>
+          <div
+            style={{
+              width: 240,
+              height: 8,
+              borderRadius: 8,
+              background:
+                "linear-gradient(90deg,#e4322b,#ef7d1e,#f4c41f,#5bb24a,#2a8fd0,#7a3f98)",
+            }}
+          />
         </div>
       </div>
     ),

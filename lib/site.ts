@@ -5,21 +5,31 @@
  * uit elkaar lopen.
  *
  * Gegevens overgenomen van vrijzinnigen.nl (meta-omschrijving + contactpagina).
+ * Nieuw productie-domein en e-mail: vrijzinnigennederland.nl.
  */
 export const SITE = {
   name: "Vrijzinnigen Nederland",
-  // Productie-domein. Pas dit aan zodra de definitieve URL bekend is.
-  url: "https://www.vrijzinnigen.nl",
+  // Nieuw productie-domein.
+  url: "https://www.vrijzinnigennederland.nl",
   locale: "nl_NL",
+  // Letterlijke payoff uit het logo.
+  payoff: "Verbindt vrijdenkers en zinzoekers",
   // Letterlijke meta-omschrijving van vrijzinnigen.nl.
   description:
     "Vrijzinnigen Nederland verbindt mensen die inspiratie en zingeving delen. Onze vereniging bindt gelijkgestemden van vrijzinnigen tot religieus humanisten.",
-  email: "bureau@vrijzinnigen.nl",
+  email: "bureau@vrijzinnigennederland.nl",
   foundingYear: "1870",
   address: {
     street: "César Francklaan 13",
     postalCode: "1272 EC",
     city: "Huizen",
     country: "NL",
+  },
+  // Werkende social-profielen (van vrijzinnigen.nl). Twitter/Instagram hadden
+  // op hun eigen site geen werkende link en zijn daarom (nog) niet opgenomen.
+  social: {
+    facebook:
+      "https://www.facebook.com/Vrijzinnigen-Nederland-246711892072944/timeline/",
+    linkedin: "https://www.linkedin.com/company/9341161",
   },
 } as const;

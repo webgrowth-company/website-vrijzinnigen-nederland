@@ -50,6 +50,18 @@
   /* Easings — sterke curves (Emil) */
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* Regenboog — ontleend aan het logo-spectrum van Vrijzinnigen Nederland.
+     Bewust de merk-signatuur, spaarzaam ingezet (balk + onderstreping). */
+  --gradient-rainbow: linear-gradient(
+    90deg,
+    #e4322b 0%,
+    #ef7d1e 20%,
+    #f4c41f 38%,
+    #5bb24a 56%,
+    #2a8fd0 74%,
+    #7a3f98 100%
+  );
 }
 
 html {
@@ -127,6 +139,22 @@ body {
     transform: none;
     transition: none;
   }
+}
+
+/* Regenboog-signatuur: dunne spectrum-balk (logo-echo) */
+.rainbow-bar {
+  height: 3px;
+  background: var(--gradient-rainbow);
+}
+
+/* Regenboog-onderstreping op een woord, leesbaarheid blijft in de tekstkleur
+   (geen gradient-text, dat is verboden; dit is een decoratieve rule) */
+.rainbow-underline {
+  background-image: var(--gradient-rainbow);
+  background-repeat: no-repeat;
+  background-position: 0 88%;
+  background-size: 100% 0.14em;
+  padding-bottom: 0.04em;
 }
 
 /* Hairline-index rij: accent kruipt binnen bij hover (geen kaart) */
