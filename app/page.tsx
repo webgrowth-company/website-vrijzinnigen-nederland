@@ -1,6 +1,7 @@
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { Reveal } from "@/components/reveal";
+import { Afdelingen } from "@/components/afdelingen";
 import { SITE } from "@/lib/site";
 
 const ORG_JSONLD = {
@@ -264,6 +265,40 @@ export default function Home() {
                 </Reveal>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* ── Afdelingen — compacte zoek-sectie ─────────── */}
+        <section
+          id="afdelingen"
+          className="border-t border-[var(--color-rule)] bg-[var(--color-paper-raised)]"
+        >
+          <div className="mx-auto max-w-[76rem] px-6 py-24 sm:px-10">
+            <div className="max-w-2xl">
+              <Reveal as="p" className="eyebrow text-[var(--color-clay)]">
+                Lokale afdelingen
+              </Reveal>
+              <Reveal
+                as="h2"
+                delay={80}
+                className="font-display mt-3 text-[2rem] font-medium leading-tight text-[var(--color-ink-strong)] sm:text-[2.4rem]"
+              >
+                Vind jouw afdeling
+              </Reveal>
+              <Reveal
+                as="p"
+                delay={120}
+                className="mt-4 text-base leading-relaxed text-[var(--color-ink-muted)]"
+              >
+                Verspreid over het land vind je onze lokale afdelingen, elk met
+                eigen bijeenkomsten en activiteiten. Zoek de plek bij jou in de
+                buurt.
+              </Reveal>
+            </div>
+
+            <Reveal delay={160}>
+              <Afdelingen />
+            </Reveal>
           </div>
         </section>
 

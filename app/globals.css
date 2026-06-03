@@ -158,6 +158,11 @@ body {
   }
 }
 
+/* Soepele krimp van header + logo bij scrollen (sticky-state) */
+.h-anim {
+  transition: height 320ms var(--ease-out);
+}
+
 /* Regenboog-signatuur: spectrum-balk (logo-echo), gebruikt in de footer.
    De header-divider gebruikt een inline-gradient (gegarandeerde render). */
 .rainbow-bar {
