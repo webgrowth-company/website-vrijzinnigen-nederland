@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+/* ─────────────────────────────────────────────
+   Vrijzinnigen Nederland — huisstijl-tokens
+
+   LET OP: dit is een TIJDELIJK palet. Zodra het
+   echte logo + de merkkleuren binnen zijn, hoef je
+   alleen de waarden hieronder te vervangen; de rest
+   van de site erft alles uit deze tokens.
+
+   Warm, open en verbindend: cream-achtergrond,
+   warme inkt-tekst, terracotta als primaire kleur,
+   goud als accent.
+   ───────────────────────────────────────────── */
+
+@theme inline {
+  /* Oppervlakken */
+  --color-bg: #faf6ef;
+  --color-bg-elevated: #ffffff;
+  --color-bg-muted: #f2ebe0;
+  --color-bg-deep: #221f1c;
+
+  /* Inkt / tekst */
+  --color-ink: #1c1a17;
+  --color-ink-strong: #100f0d;
+  --color-ink-muted: rgba(28, 26, 23, 0.70);
+  --color-ink-subtle: rgba(28, 26, 23, 0.55);
+  --color-ink-faint: rgba(28, 26, 23, 0.32);
+  --color-ink-invert: #faf6ef;
+  --color-ink-invert-muted: rgba(250, 246, 239, 0.72);
+
+  /* Merk — terracotta primair, goud accent */
+  --color-brand: #b1492f;
+  --color-brand-hover: #983c25;
+  --color-brand-soft: rgba(177, 73, 47, 0.08);
+  --color-brand-tint: rgba(177, 73, 47, 0.14);
+  --color-gold: #d29a2c;
+  --color-gold-soft: rgba(210, 154, 44, 0.12);
+
+  /* Lijnen */
+  --color-line: rgba(28, 26, 23, 0.10);
+  --color-line-strong: rgba(28, 26, 23, 0.16);
+  --color-line-invert: rgba(250, 246, 239, 0.14);
+
+  /* Typografie */
+  --font-sans: var(--font-inter);
+
+  /* Easing */
+  --ease-out-strong: cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
+}
+
+html,
+body {
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-sans), system-ui, -apple-system, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+::selection {
+  background: var(--color-brand);
+  color: #fff;
+}
+
+/* Knoppen — subtiele lift bij hover, directe feedback bij klik */
+.btn-press {
+  transition: transform 200ms var(--ease-out-strong),
+    background-color 220ms ease, color 200ms ease,
+    border-color 220ms ease, box-shadow 220ms ease;
+}
+@media (hover: hover) and (pointer: fine) {
+  .btn-press:hover {
+    transform: translateY(-2px);
+  }
+}
+.btn-press:active {
+  transform: translateY(0);
+}
+
+/* Zachte focus-ring voor toetsenbordnavigatie */
+:where(a, button):focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
