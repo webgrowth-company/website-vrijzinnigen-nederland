@@ -11,14 +11,14 @@ const NAV = [
 export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 bg-[var(--color-paper)]/85 backdrop-blur-md">
-      <div className="mx-auto flex h-[4.25rem] max-w-[76rem] items-center justify-between gap-8 px-6 sm:px-10">
+      <div className="mx-auto flex h-[8.5rem] max-w-[76rem] items-center justify-between gap-8 px-6 sm:px-10">
         <Link href="/" aria-label="Vrijzinnigen Nederland, naar home" className="press flex items-center">
           <Image
             src={logo}
             alt="Vrijzinnigen Nederland, verbindt vrijdenkers en zinzoekers"
             priority
-            className="h-11 w-auto"
-            sizes="64px"
+            className="h-[7.5rem] w-auto"
+            sizes="170px"
           />
         </Link>
 

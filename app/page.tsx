@@ -152,7 +152,7 @@ export default function Home() {
         {/* ── Manifest — Wie we zijn (echte geschiedenis) ── */}
         <section
           id="manifest"
-          className="scroll-mt-24 border-t border-[var(--color-rule)] bg-[var(--color-paper-raised)]"
+          className="border-t border-[var(--color-rule)] bg-[var(--color-paper-raised)]"
         >
           <div className="mx-auto grid max-w-[76rem] gap-x-14 gap-y-8 px-6 py-24 sm:px-10 md:grid-cols-[1fr_1.7fr]">
             <div className="md:sticky md:top-28 md:self-start">
@@ -193,7 +193,7 @@ export default function Home() {
         {/* ── Praktijk — Wat we doen (genummerde index) ─── */}
         <section
           id="praktijk"
-          className="scroll-mt-24 border-t border-[var(--color-rule)]"
+          className="border-t border-[var(--color-rule)]"
         >
           <div className="mx-auto max-w-[76rem] px-6 py-24 sm:px-10">
             <div className="grid gap-x-14 gap-y-10 md:grid-cols-[1fr_1.7fr]">
@@ -236,7 +236,7 @@ export default function Home() {
         {/* ── Idealen — grote statements, geen boxes ────── */}
         <section
           id="idealen"
-          className="scroll-mt-24 border-t border-[var(--color-rule)] bg-[var(--color-paper-sunk)]"
+          className="border-t border-[var(--color-rule)] bg-[var(--color-paper-sunk)]"
         >
           <div className="mx-auto max-w-[76rem] px-6 py-24 sm:px-10">
             <Reveal as="p" className="eyebrow text-[var(--color-clay)]">
@@ -266,7 +266,7 @@ export default function Home() {
         {/* ── Meedoen — drenched CTA-vlak ───────────────── */}
         <section
           id="meedoen"
-          className="scroll-mt-24 bg-[var(--color-espresso)] text-[var(--color-paper-on-dark)]"
+          className="bg-[var(--color-espresso)] text-[var(--color-paper-on-dark)]"
         >
           <div className="mx-auto max-w-[76rem] px-6 py-28 sm:px-10">
             <div className="grid gap-x-14 gap-y-10 md:grid-cols-[1.5fr_1fr] md:items-end">
