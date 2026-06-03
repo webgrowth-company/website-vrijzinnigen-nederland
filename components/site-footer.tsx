@@ -15,6 +15,11 @@ export function SiteFooter() {
               Een vereniging die mensen verbindt rond inspiratie en zingeving,
               van vrijzinnigen tot religieus humanisten.
             </p>
+            <address className="mt-5 text-[0.9rem] not-italic leading-relaxed text-[var(--color-ink-subtle)]">
+              {SITE.address.street}
+              <br />
+              {SITE.address.postalCode} {SITE.address.city}
+            </address>
           </div>
 
           <nav

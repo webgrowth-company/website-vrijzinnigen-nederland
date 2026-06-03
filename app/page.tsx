@@ -10,8 +10,16 @@ const ORG_JSONLD = {
   url: SITE.url,
   description: SITE.description,
   email: SITE.email,
+  foundingDate: SITE.foundingYear,
   areaServed: "NL",
   knowsLanguage: "nl-NL",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: SITE.address.street,
+    postalCode: SITE.address.postalCode,
+    addressLocality: SITE.address.city,
+    addressCountry: SITE.address.country,
+  },
 };
 
 const WEBSITE_JSONLD = {
@@ -23,16 +31,18 @@ const WEBSITE_JSONLD = {
   publisher: { "@type": "Organization", name: SITE.name },
 };
 
+// Wat we doen — gebaseerd op de rubrieken en activiteiten op vrijzinnigen.nl
+// (agenda, vieringen, lezingen/Vrijzinnig Platform, pastoraat, blog, inspiratie).
 const PRAKTIJK = [
   {
     num: "01",
-    title: "Bijeenkomsten en agenda",
-    text: "Vieringen, ontmoetingen en momenten van bezinning, het hele jaar door en op verschillende plekken in het land.",
+    title: "Bijeenkomsten en vieringen",
+    text: "Ontmoetingsdagen, vieringen en momenten van bezinning bij de afdelingen, verspreid door het hele land.",
   },
   {
     num: "02",
-    title: "Lezingen en gesprekskringen",
-    text: "Verdiepende lezingen en open gesprekken over levensvragen, filosofie, kunst en zingeving.",
+    title: "Lezingen en het Vrijzinnig Platform",
+    text: "De Vrijzinnige Lezing en de Opzoomerlezing, met workshops, excursies en literatuur rond zingeving en duurzaamheid.",
   },
   {
     num: "03",
@@ -41,23 +51,24 @@ const PRAKTIJK = [
   },
   {
     num: "04",
-    title: "Inspiratie en verhalen",
-    text: "Teksten en bronnen die uitnodigen om zelf na te denken over wat er werkelijk toe doet.",
+    title: "Blog en inspiratiebronnen",
+    text: "Verhalen, recensies en denkers die ons inspireren, van Erasmus en Spinoza tot Hannah Arendt.",
   },
 ];
 
+// Idealen — ontleend aan de pagina 'Vrijzinnige idealen' op vrijzinnigen.nl.
 const IDEALEN = [
   {
-    word: "Vrij denken",
-    text: "We geven ruimte aan ieders eigen zoektocht. Vragen mogen er zijn, ook zonder sluitend antwoord.",
+    word: "Vrijheid",
+    text: "Vrijheid is misschien wel het grootste vrijzinnige ideaal: vrij van orthodoxe dogma's en dwingende structuren, vrij in denken en ontdekken.",
   },
   {
     word: "Verbinding",
-    text: "We brengen gelijkgestemden samen, van vrijzinnig gelovigen tot religieus humanisten, in openheid en respect.",
+    text: "Een vrijzinnige is juist iemand die verbindt. Nieuwsgierig blijven en het pad samen met anderen bewandelen, in verbondenheid met de traditie en vertrouwen in de toekomst.",
   },
   {
-    word: "Betekenis",
-    text: "We zoeken zingeving in het gewone leven en in elkaar, dichtbij en met aandacht voor de wereld om ons heen.",
+    word: "Bezinning",
+    text: "Plekken waar ruimte is om te bezinnen, en om te bevestigen dat zorg voor elkaar, respect, tolerantie en openheid wezenlijke waarden zijn.",
   },
 ];
 
@@ -81,7 +92,7 @@ export default function Home() {
           <div className="grid gap-x-14 gap-y-12 md:grid-cols-[1.65fr_1fr]">
             <div>
               <Reveal as="p" className="eyebrow text-[var(--color-clay)]">
-                Vereniging voor zingeving en ontmoeting
+                Vereniging sinds {SITE.foundingYear}
               </Reveal>
 
               <Reveal
@@ -96,11 +107,11 @@ export default function Home() {
               <Reveal
                 as="p"
                 delay={160}
-                className="mt-8 max-w-[46ch] text-lg leading-relaxed text-[var(--color-ink-muted)]"
+                className="mt-8 max-w-[48ch] text-lg leading-relaxed text-[var(--color-ink-muted)]"
               >
                 Vrijzinnigen Nederland verbindt mensen die inspiratie en zingeving
-                delen. Gelijkgestemden, van vrijzinnigen tot religieus humanisten,
-                die het gesprek over het leven open willen houden.
+                delen. Onze vereniging bindt gelijkgestemden van vrijzinnigen tot
+                religieus humanisten.
               </Reveal>
 
               <Reveal delay={240} className="mt-10 flex flex-wrap items-center gap-x-7 gap-y-4">
@@ -119,25 +130,24 @@ export default function Home() {
               </Reveal>
             </div>
 
-            {/* Redactionele aside: pull-quote als tweede-leesmoment */}
+            {/* Redactionele aside: een echt citaat van vrijzinnigen.nl */}
             <Reveal
               delay={200}
               className="flex md:border-l md:border-[var(--color-rule)] md:pl-12"
             >
               <figure className="self-end">
                 <p className="font-display text-2xl font-medium italic leading-snug text-[var(--color-ink)] sm:text-[1.7rem]">
-                  &ldquo;Wat ons bindt is niet één antwoord, maar de moed om te
-                  blijven vragen.&rdquo;
+                  &ldquo;Durf te dwalen en te dromen.&rdquo;
                 </p>
                 <figcaption className="eyebrow mt-5 text-[var(--color-ink-subtle)]">
-                  Onze grondhouding
+                  Friedrich von Schiller
                 </figcaption>
               </figure>
             </Reveal>
           </div>
         </section>
 
-        {/* ── Manifest — Wie we zijn ────────────────────── */}
+        {/* ── Manifest — Wie we zijn (echte geschiedenis) ── */}
         <section
           id="manifest"
           className="scroll-mt-24 border-t border-[var(--color-rule)] bg-[var(--color-paper-raised)]"
@@ -152,7 +162,7 @@ export default function Home() {
                 delay={80}
                 className="font-display mt-5 text-[1.7rem] font-medium leading-snug text-[var(--color-ink-strong)]"
               >
-                Een open thuis voor vrijzinnige geesten.
+                Een vrije zoektocht, al meer dan 150 jaar.
               </Reveal>
             </div>
 
@@ -161,15 +171,18 @@ export default function Home() {
               className="max-w-[58ch] space-y-6 text-[1.12rem] leading-[1.75] text-[var(--color-ink-muted)] [&>p:first-of-type]:first-letter:float-left [&>p:first-of-type]:first-letter:mr-3 [&>p:first-of-type]:first-letter:font-display [&>p:first-of-type]:first-letter:text-[3.4rem] [&>p:first-of-type]:first-letter:font-semibold [&>p:first-of-type]:first-letter:leading-[0.78] [&>p:first-of-type]:first-letter:text-[var(--color-clay)]"
             >
               <p>
-                Vrijzinnigen Nederland is een vereniging die mensen bij elkaar
-                brengt rond inspiratie, bezinning en zingeving. Bij ons staat de
-                eigen zoektocht centraal. Er is geen voorgeschreven leer en geen
-                vast antwoord, wel een gedeelde nieuwsgierigheid naar het leven.
+                Vrijzinnigen Nederland werd in {SITE.foundingYear} opgericht door
+                Opzoomer, samen met predikanten uit het noorden van het land. Zij
+                verzetten zich tegen de steeds dogmatischer wordende kerk en kozen
+                voor een vrije zoektocht, zonder vooroordelen en zonder dwang van
+                de traditie.
               </p>
               <p>
-                Onze leden lopen uiteen van vrijzinnig gelovigen tot religieus
-                humanisten. Wat ons bindt is de waardering voor vrij denken, voor
-                de ontmoeting met elkaar en voor een leven dat betekenis heeft.
+                Die zoektocht staat nog steeds centraal. Bij ons is geen
+                voorgeschreven leer en geen vast antwoord, wel een gedeelde
+                nieuwsgierigheid naar het leven. Onze leden lopen uiteen van
+                vrijzinnig gelovigen tot religieus humanisten, verbonden door de
+                waardering voor vrij denken en voor de ontmoeting met elkaar.
               </p>
             </Reveal>
           </div>
