@@ -25,11 +25,11 @@ export const SITE = {
     city: "Huizen",
     country: "NL",
   },
-  // Werkende social-profielen (van vrijzinnigen.nl). Twitter/Instagram hadden
-  // op hun eigen site geen werkende link en zijn daarom (nog) niet opgenomen.
+  // Werkende social-profielen.
   social: {
     facebook:
       "https://www.facebook.com/Vrijzinnigen-Nederland-246711892072944/timeline/",
+    instagram: "https://www.instagram.com/vrijzinnigen_nederland/",
     linkedin: "https://www.linkedin.com/company/9341161",
   },
 } as const;

@@ -21,7 +21,11 @@ const ORG_JSONLD = {
     addressLocality: SITE.address.city,
     addressCountry: SITE.address.country,
   },
-  sameAs: [SITE.social.facebook, SITE.social.linkedin],
+  sameAs: [
+    SITE.social.facebook,
+    SITE.social.instagram,
+    SITE.social.linkedin,
+  ],
 };
 
 const WEBSITE_JSONLD = {

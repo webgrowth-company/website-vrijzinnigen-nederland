@@ -1,8 +1,9 @@
-import { Facebook, Linkedin } from "lucide-react";
+import { Facebook, Instagram, Linkedin } from "lucide-react";
 import { SITE } from "@/lib/site";
 
 const SOCIALS = [
   { href: SITE.social.facebook, label: "Facebook", Icon: Facebook },
+  { href: SITE.social.instagram, label: "Instagram", Icon: Instagram },
   { href: SITE.social.linkedin, label: "LinkedIn", Icon: Linkedin },
 ];
 
@@ -59,9 +60,10 @@ export function SiteFooter() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`${SITE.name} op ${label}`}
-                  className="press grid h-10 w-10 place-items-center rounded-full border border-[var(--color-rule)] text-[var(--color-ink-muted)] transition-colors hover:border-[var(--color-clay)] hover:text-[var(--color-clay)]"
+                  className="press grid h-11 w-11 place-items-center rounded-full text-white shadow-sm transition-[filter] hover:brightness-95"
+                  style={{ backgroundImage: "var(--gradient-primary)" }}
                 >
-                  <Icon size={18} strokeWidth={1.8} aria-hidden />
+                  <Icon size={19} strokeWidth={2} aria-hidden />
                 </a>
               ))}
             </div>
