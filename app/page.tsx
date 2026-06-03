@@ -119,7 +119,7 @@ export default function Home() {
               <Reveal delay={240} className="mt-10 flex flex-wrap items-center gap-x-7 gap-y-4">
                 <a
                   href="#meedoen"
-                  className="press inline-flex items-center justify-center rounded-full bg-[var(--color-clay)] px-7 py-3.5 text-[0.95rem] font-semibold text-[var(--color-paper-on-dark)] hover:bg-[var(--color-clay-deep)]"
+                  className="press btn-primary inline-flex items-center justify-center rounded-full px-7 py-3.5 text-[0.95rem] font-semibold"
                 >
                   Word lid of doe mee
                 </a>
@@ -285,7 +285,7 @@ export default function Home() {
                 <div className="mt-8 flex flex-wrap items-center gap-x-7 gap-y-4">
                   <a
                     href={`mailto:${SITE.email}`}
-                    className="press inline-flex items-center justify-center rounded-full bg-[var(--color-clay)] px-7 py-3.5 text-[0.95rem] font-semibold text-[var(--color-paper-on-dark)] hover:bg-[var(--color-clay-deep)]"
+                    className="press btn-primary inline-flex items-center justify-center rounded-full px-7 py-3.5 text-[0.95rem] font-semibold"
                   >
                     Neem contact op
                   </a>

@@ -29,11 +29,14 @@
   --color-paper-on-dark: oklch(0.95 0.012 82);
   --color-paper-on-dark-muted: oklch(0.95 0.012 82 / 0.66);
 
-  /* Accent — gecommitteerde klei/cinnaber, spaarzaam goud */
-  --color-clay: oklch(0.555 0.142 41);
-  --color-clay-deep: oklch(0.475 0.135 40);
-  --color-clay-soft: oklch(0.555 0.142 41 / 0.10);
-  --color-ochre: oklch(0.685 0.108 74);
+  /* Hoofdkleur — oranje gradient uit het screenshot (diep oranje -> amber).
+     Gradient voor vullingen, de vaste --color-clay (deep oranje) voor
+     accent-tekst en lijnen, zodat tekst leesbaar blijft. */
+  --gradient-primary: linear-gradient(90deg, #d9521a 0%, #ed7d1d 50%, #f5a020 100%);
+  --color-clay: oklch(0.53 0.155 46);
+  --color-clay-deep: oklch(0.46 0.14 44);
+  --color-clay-soft: oklch(0.53 0.155 46 / 0.10);
+  --color-ochre: oklch(0.7 0.12 70);
 
   /* Donker drench-vlak (CTA) — diep espresso, warm */
   --color-espresso: oklch(0.245 0.018 50);
@@ -51,16 +54,19 @@
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
 
-  /* Regenboog — ontleend aan het logo-spectrum van Vrijzinnigen Nederland.
+  /* Regenboog — exact de logo-volgorde van Vrijzinnigen Nederland:
+     groen -> blauw -> paars -> rood -> oranje -> geel (zie screenshot).
      Bewust de merk-signatuur, spaarzaam ingezet (balk + onderstreping). */
   --gradient-rainbow: linear-gradient(
     90deg,
-    #e4322b 0%,
-    #ef7d1e 20%,
-    #f4c41f 38%,
-    #5bb24a 56%,
-    #2a8fd0 74%,
-    #7a3f98 100%
+    #4fb14a 0%,
+    #1fa79f 14%,
+    #2a8fd0 28%,
+    #6a45a0 44%,
+    #b83b8f 58%,
+    #e4322b 72%,
+    #ef7d1e 87%,
+    #f4c41f 100%
   );
 }
 
@@ -112,6 +118,17 @@ body {
 }
 .press:active {
   transform: scale(0.975);
+}
+
+/* Primaire knop: oranje gradient-vulling (de hoofdkleur uit het screenshot) */
+.btn-primary {
+  background-image: var(--gradient-primary);
+  color: var(--color-paper-on-dark);
+}
+@media (hover: hover) and (pointer: fine) {
+  .btn-primary:hover {
+    filter: brightness(0.95);
+  }
 }
 
 :where(a, button):focus-visible {

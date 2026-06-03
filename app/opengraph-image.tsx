@@ -94,7 +94,7 @@ export default function OgImage() {
               height: 8,
               borderRadius: 8,
               background:
-                "linear-gradient(90deg,#e4322b,#ef7d1e,#f4c41f,#5bb24a,#2a8fd0,#7a3f98)",
+                "linear-gradient(90deg,#4fb14a,#1fa79f,#2a8fd0,#6a45a0,#b83b8f,#e4322b,#ef7d1e,#f4c41f)",
             }}
           />
         </div>

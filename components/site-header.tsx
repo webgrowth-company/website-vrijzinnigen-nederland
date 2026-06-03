@@ -42,16 +42,8 @@ export function SiteHeader() {
         </a>
       </div>
 
-      {/* Regenboog-divider onder het menu, ontleend aan het logo.
-          Gradient inline zodat hij gegarandeerd rendert, los van Tailwind-tokens. */}
-      <div
-        aria-hidden
-        style={{
-          height: "6px",
-          backgroundImage:
-            "linear-gradient(90deg,#e4322b 0%,#ef7d1e 20%,#f4c41f 38%,#5bb24a 56%,#2a8fd0 74%,#7a3f98 100%)",
-        }}
-      />
+      {/* Regenboog-divider (3px) onder het menu, in de logo-volgorde */}
+      <div className="rainbow-bar" aria-hidden />
     </header>
   );
 }
