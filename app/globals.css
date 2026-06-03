@@ -141,7 +141,8 @@ body {
   }
 }
 
-/* Regenboog-signatuur: dunne spectrum-balk (logo-echo) */
+/* Regenboog-signatuur: spectrum-balk (logo-echo), gebruikt in de footer.
+   De header-divider gebruikt een inline-gradient (gegarandeerde render). */
 .rainbow-bar {
   height: 3px;
   background: var(--gradient-rainbow);
