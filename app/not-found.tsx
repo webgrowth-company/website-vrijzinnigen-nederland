@@ -2,12 +2,12 @@ import Link from "next/link";
 
 export default function NotFound() {
   return (
-    <main className="flex flex-1 items-center justify-center px-5 py-28 text-center">
+    <main className="flex flex-1 items-center justify-center px-6 py-32 text-center">
       <div className="max-w-md">
-        <p className="text-sm font-semibold uppercase tracking-wider text-[var(--color-brand)]">
+        <p className="font-display text-[5rem] font-medium leading-none text-[var(--color-clay)]">
           404
         </p>
-        <h1 className="mt-3 text-3xl font-bold tracking-tight text-[var(--color-ink-strong)]">
+        <h1 className="font-display mt-4 text-3xl font-medium tracking-tight text-[var(--color-ink-strong)]">
           Deze pagina konden we niet vinden
         </h1>
         <p className="mt-3 text-base leading-relaxed text-[var(--color-ink-muted)]">
@@ -16,7 +16,7 @@ export default function NotFound() {
         </p>
         <Link
           href="/"
-          className="btn-press mt-8 inline-flex items-center justify-center rounded-full bg-[var(--color-brand)] px-7 py-3.5 text-sm font-semibold text-[var(--color-ink-invert)] hover:bg-[var(--color-brand-hover)]"
+          className="press mt-9 inline-flex items-center justify-center rounded-full bg-[var(--color-clay)] px-7 py-3.5 text-[0.95rem] font-semibold text-[var(--color-paper-on-dark)] hover:bg-[var(--color-clay-deep)]"
         >
           Terug naar home
         </Link>

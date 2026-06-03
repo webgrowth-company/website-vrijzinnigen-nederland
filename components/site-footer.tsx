@@ -4,46 +4,41 @@ export function SiteFooter() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-[var(--color-line-invert)] bg-[var(--color-bg-deep)] text-[var(--color-ink-invert)]">
-      <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
-        <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
-          <div className="max-w-sm">
-            <div className="flex items-center gap-3">
-              <span
-                aria-hidden
-                className="grid h-9 w-9 place-items-center rounded-xl bg-[var(--color-brand)] text-base font-extrabold text-[var(--color-ink-invert)]"
-              >
-                V
-              </span>
-              <span className="text-base font-bold">Vrijzinnigen Nederland</span>
-            </div>
-            <p className="mt-4 text-sm leading-relaxed text-[var(--color-ink-invert-muted)]">
+    <footer className="border-t border-[var(--color-rule)] bg-[var(--color-paper)]">
+      <div className="mx-auto max-w-[76rem] px-6 py-16 sm:px-10">
+        <div className="flex flex-col gap-12 md:flex-row md:items-end md:justify-between">
+          <div className="max-w-md">
+            <p className="font-display text-2xl font-medium leading-snug text-[var(--color-ink-strong)]">
+              Vrijzinnigen Nederland
+            </p>
+            <p className="mt-3 text-[0.95rem] leading-relaxed text-[var(--color-ink-muted)]">
               Een vereniging die mensen verbindt rond inspiratie en zingeving,
               van vrijzinnigen tot religieus humanisten.
             </p>
           </div>
 
-          <nav className="grid grid-cols-2 gap-x-12 gap-y-3 text-sm" aria-label="Footermenu">
-            <a className="text-[var(--color-ink-invert-muted)] transition-colors hover:text-[var(--color-ink-invert)]" href="#wie-we-zijn">
+          <nav
+            className="flex flex-wrap gap-x-10 gap-y-3 text-[0.95rem]"
+            aria-label="Footermenu"
+          >
+            <a className="text-[var(--color-ink-muted)] transition-colors hover:text-[var(--color-ink-strong)]" href="#manifest">
               Wie we zijn
             </a>
-            <a className="text-[var(--color-ink-invert-muted)] transition-colors hover:text-[var(--color-ink-invert)]" href="#wat-we-doen">
+            <a className="text-[var(--color-ink-muted)] transition-colors hover:text-[var(--color-ink-strong)]" href="#praktijk">
               Wat we doen
             </a>
-            <a className="text-[var(--color-ink-invert-muted)] transition-colors hover:text-[var(--color-ink-invert)]" href="#idealen">
+            <a className="text-[var(--color-ink-muted)] transition-colors hover:text-[var(--color-ink-strong)]" href="#idealen">
               Idealen
             </a>
-            <a className="text-[var(--color-ink-invert-muted)] transition-colors hover:text-[var(--color-ink-invert)]" href="#meedoen">
-              Meedoen
-            </a>
-            <a className="text-[var(--color-ink-invert-muted)] transition-colors hover:text-[var(--color-ink-invert)]" href={`mailto:${SITE.email}`}>
+            <a className="text-[var(--color-ink-muted)] transition-colors hover:text-[var(--color-ink-strong)]" href={`mailto:${SITE.email}`}>
               {SITE.email}
             </a>
           </nav>
         </div>
 
-        <div className="mt-12 border-t border-[var(--color-line-invert)] pt-6 text-xs text-[var(--color-ink-invert-muted)]">
-          © {year} Vrijzinnigen Nederland. Alle rechten voorbehouden.
+        <div className="mt-14 flex items-center justify-between border-t border-[var(--color-rule-soft)] pt-6 text-[0.8rem] text-[var(--color-ink-subtle)]">
+          <span>© {year} Vrijzinnigen Nederland</span>
+          <span className="font-display italic">Ruimte voor vrij denken</span>
         </div>
       </div>
     </footer>

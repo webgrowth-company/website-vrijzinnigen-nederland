@@ -4,6 +4,8 @@ export const alt = "Vrijzinnigen Nederland, ruimte voor zingeving en verbinding"
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
+// Redactionele OG-kaart: diep espresso-vlak, klei-accent, serif-aanslag.
+// Vervangen door merk-versie zodra logo + kleuren binnen zijn.
 export default function OgImage() {
   return new ImageResponse(
     (
@@ -14,50 +16,75 @@ export default function OgImage() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          background:
-            "linear-gradient(135deg, #faf6ef 0%, #f2ebe0 55%, #efe2d2 100%)",
-          padding: "80px",
-          fontFamily: "sans-serif",
+          background: "#241d18",
+          padding: "84px",
+          fontFamily: "Georgia, 'Times New Roman', serif",
         }}
       >
-        <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: 18,
+            fontFamily: "sans-serif",
+          }}
+        >
           <div
             style={{
-              width: 56,
-              height: 56,
-              borderRadius: 16,
-              background: "#b1492f",
+              width: 12,
+              height: 12,
+              borderRadius: 12,
+              background: "#c2602f",
               display: "flex",
             }}
           />
-          <div style={{ fontSize: 30, fontWeight: 700, color: "#1c1a17" }}>
+          <div
+            style={{
+              fontSize: 22,
+              fontWeight: 600,
+              letterSpacing: 4,
+              textTransform: "uppercase",
+              color: "#d9b27a",
+            }}
+          >
             Vrijzinnigen Nederland
           </div>
         </div>
 
-        <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: 28 }}>
           <div
             style={{
-              fontSize: 68,
-              fontWeight: 800,
-              color: "#1c1a17",
-              lineHeight: 1.05,
-              maxWidth: 920,
+              fontSize: 76,
+              fontWeight: 500,
+              color: "#f1e9dc",
+              lineHeight: 1.04,
+              letterSpacing: -1,
+              maxWidth: 940,
             }}
           >
             Ruimte voor zingeving, verbinding en vrij denken.
           </div>
-          <div style={{ fontSize: 30, color: "rgba(28,26,23,0.65)", maxWidth: 880 }}>
+          <div
+            style={{
+              fontSize: 28,
+              color: "rgba(241,233,220,0.66)",
+              maxWidth: 820,
+              fontFamily: "sans-serif",
+            }}
+          >
             Een vereniging die gelijkgestemden verbindt, van vrijzinnigen tot
             religieus humanisten.
           </div>
         </div>
 
-        <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
-          <div style={{ height: 6, width: 64, background: "#d29a2c", borderRadius: 4 }} />
-          <div style={{ fontSize: 26, color: "#b1492f", fontWeight: 600 }}>
-            vrijzinnigen.nl
-          </div>
+        <div
+          style={{
+            fontSize: 24,
+            color: "rgba(241,233,220,0.5)",
+            fontFamily: "sans-serif",
+          }}
+        >
+          vrijzinnigen.nl
         </div>
       </div>
     ),

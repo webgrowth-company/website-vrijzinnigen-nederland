@@ -1,11 +1,20 @@
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
+import { Fraunces, Hanken_Grotesk } from "next/font/google";
 import { SITE } from "@/lib/site";
 import "./globals.css";
 
-const inter = Inter({
+// Redactionele serif voor display-koppen: literair, reflectief, niet-SaaS.
+const fraunces = Fraunces({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-fraunces",
+  display: "swap",
+  axes: ["opsz", "SOFT"],
+});
+
+// Humanistische grotesk voor tekst en UI (geen Inter).
+const hanken = Hanken_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-hanken",
   display: "swap",
 });
 
@@ -65,8 +74,8 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#faf6ef" },
-    { media: "(prefers-color-scheme: dark)", color: "#221f1c" },
+    { media: "(prefers-color-scheme: light)", color: "#f6f0e6" },
+    { media: "(prefers-color-scheme: dark)", color: "#221d18" },
   ],
   width: "device-width",
   initialScale: 1,
@@ -77,7 +86,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="nl" className={inter.variable}>
+    <html lang="nl" className={`${fraunces.variable} ${hanken.variable}`}>
       <body className="min-h-screen flex flex-col">{children}</body>
     </html>
   );
